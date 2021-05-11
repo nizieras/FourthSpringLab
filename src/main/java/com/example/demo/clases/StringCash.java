@@ -1,23 +1,25 @@
 package com.example.demo.clases;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
 @Component
+@AllArgsConstructor
 public class StringCash {
-    private final Map<TransmittedStrings, ReturnedString> cash = new HashMap<>();
+    private final Map<String, String> cash = new HashMap<>();
 
-    public ReturnedString addStringsToCash(TransmittedStrings transmittedStrings, ReturnedString returnedString) {
-       return cash.put(transmittedStrings, returnedString) ;
+    public void addStringsToCash(String key, String resultValue) {
+       cash.put(key, resultValue) ;
     }
 
-    public ReturnedString getReturnedString (TransmittedStrings transmittedStrings){
-        return cash.get(transmittedStrings);
+    public String getResultString (String key){
+        return cash.get(key);
     }
 
-    public boolean isExistTransmittedStrings(TransmittedStrings transmittedStrings){
-        return cash.containsKey(transmittedStrings);
+    public boolean isExistTransmittedStrings(String key){
+        return cash.containsKey(key);
     }
 }
