@@ -14,7 +14,7 @@
             "exec": [
               "var i\r",
               "for(i = 0; i < 3000; i++) {\r",
-              "pm.sendRequest(\"http://localhost:8080/stringAct/toUpCase?string=yourString\", function (err, response) {\r",
+              "pm.sendRequest(\"http://localhost:8080/toUpCase?string=yourString\", function (err, response) {\r",
               "    console.log(response.json());\r",
               "});\r",
               "}"
